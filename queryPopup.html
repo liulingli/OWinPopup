@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>常规套件查询页面</title>
+<link rel="stylesheet" href="css/initializationCommon.css"/>
+<link rel="stylesheet" href="css/queryPopup.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+   <div id="ddd">dddddddddddddddddd</div>
+   <button class='button'>弹出</button>
+   <script type="text/javascript" src="js/OWinPopup.js"></script>
+<script>
+$(function(){
+	
+     $(".button").on("click",function(){
+	    $(window.top.document).creatWinPopup({
+			title:"XX查询",
+			width:550,
+			height:250,
+			configParam:{ //附在请求地址后面的参数，为json格式
+				'ddd':'dddd',
+				'aaa':'ssss'
+			},
+			url:"ceshi.html",
+			footBtn:"type2",
+			isEnterSure:true, //点击enter键默认点击确认按钮
+			openFun:function(){ //弹出层加载完成执行的函数
+				//console.log("open");
+			},
+			colseFun:function($topIframe,$winPopupIframe,IframeID){
+				//获取弹出层iframe内的元素 $(target,$winPopupIframe)
+				//console.log($("div",$winPopupIframe).text())				
+				//console.log(IframeID) //获取弹出层iframe的id
+				//调用弹出层内的方法
+				//window.top.document.getElementById(IframeID).contentWindow.xxxx()
+				//当return false时不关闭弹出层，其他默认关闭
+				//return false;
+			},
+			sureFun:function($topIframe,$winPopupIframe,IframeID){
+				console.log(IframeID)
+				//当return false时不关闭弹出层，其他默认关闭
+			}
+		});
+	}) 
+})
+</script>
+</body>
+</html>

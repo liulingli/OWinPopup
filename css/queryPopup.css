@@ -1,0 +1,191 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+  margin:0;
+  padding:0;
+  font-family:"Microsoft Yahei";
+}
+body{
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+.clearfix:after{
+  display:block;
+  content:"";
+  width:0;
+  height:0;
+  clear:both;
+}
+#queryContent{
+   width:100%;
+   margin:0 auto;
+}
+#queryContent h1{
+   font-size:16px;
+   line-height:30px;
+   text-indent:10px;
+   border-bottom:1px solid #000;
+}
+#queryContent .queryCriteria{
+   border-bottom:1px solid #BEBEBE;
+   padding:10px 0 15px;
+}
+#queryContent .queryCriteria .query-item{
+   float:left;
+   width:33%;
+   height:40px;
+   line-height:40px;
+}
+#queryContent .queryCriteria .query-item label{
+   display:inline-block;
+   width:20%;
+   text-align:right;
+   font-size:14px;
+   padding-right:10px;
+}
+#queryContent .queryCriteria .query-item input{
+   width:70%;
+   height:20px;
+   border:1px solid #ccc;
+   font-size:14px;
+   vertical-align:middle;
+   text-indent:8px;
+}
+@media screen and (max-width:880px) and (min-width:600px){
+  #queryContent .queryCriteria .query-item{
+      width:50%;
+   }
+}
+@media screen and (max-width:600px){
+   #queryContent .queryCriteria .query-item{
+      width:100%;
+   }
+}
+#queryContent .resultTitle{
+    padding:4px 0;
+}
+#queryContent .resultTitle h2{
+   float:left;
+   font-size:14px;
+   line-height:30px;
+   text-indent:10px;
+}
+#queryContent .resultTitle .operateList,#queryContent .resultTitle .operateList input[type="button"]{
+   float:right;
+   margin-right:15px;
+}
+/*#queryContent .resultTitle .operateList button{
+   padding:2px 8px;
+   background:#eaeaea;
+   border:1px solid #999;
+   font-size:14px;
+   cursor:pointer;	
+   margin: 2px 4px;
+}*/
+#queryContent .queryResults{
+	padding-bottom:50px;
+}
+#queryContent .queryResults-content{
+   width:100%;
+   overflow-x:auto;
+   overflow-y:auto;
+}
+/*滚动条样式*/
+#queryContent .queryResults-content::-webkit-scrollbar{
+  -webkit-appearance: none;
+   width: 14px;
+   height: 14px;
+}
+#queryContent .queryResults-content::-webkit-scrollbar-thumb{
+  border-radius: 8px;
+  border: 3px solid #fff;
+  background-color: rgba(0, 0, 0, .3);
+}
+#queryContent .queryResults-content table{
+  border-right:1px solid rgb(190, 190, 190);
+}
+#queryContent .queryResults-content table th,#queryContent .queryResults-content table td{
+  min-width:180px;
+  padding:2px 8px;
+  border-left:1px solid rgb(190, 190, 190);
+  border-bottom:1px solid rgb(190, 190, 190);
+  text-align:center;
+  font-size:14px;
+  color:#000;
+  font-weight:500;
+  line-height:16px;
+}
+#queryContent .queryResults-content table th{
+  padding:2px 8px;
+  border-top:1px solid rgb(190, 190, 190);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(204, 204, 204)));
+}
+#queryContent .queryResults-content table td input[type=text]{
+  width:90%;
+  margin:0 auto;
+  height:20px;
+  border:1px solid #666;
+  text-align:center;
+}
+#queryContent .queryResults-content table td input[type=text].borderNone{
+  border:none;
+}
+#queryContent .queryResults-content table .trLast td{
+  border-bottom:1px solid rgb(190, 190, 190);	
+}
+#queryContent .queryResults-content table .th1,#queryContent .queryResults-content table .th2{
+  min-width:20px;
+}
+#queryContent .queryResults-content table input[type=checkbox]{
+  width:15px;
+  height:15px;
+  border:1px solid #666;
+  vertical-align:middle;
+}
+#queryContent .queryResults-content table #addTemp{
+  display:none;
+}
+/*分页样式*/
+#queryContent .paginate-default {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.paginate-default{
+	width:100%;
+	text-align:right;
+	font-size:13px;
+}
+.paginate-default span,.paginate-default a{
+	font-family: "Microsoft Yahei";
+	display:inline-block;
+	width:30px;
+	height:25px;
+	text-align:center;
+	line-height:25px;
+	font-size:13px;
+	color:#313131;
+	border:1px solid #e2e2e2;
+	background:#f3f3f3;
+	margin:3px;
+	cursor:pointer;
+}
+.paginate-default a{
+	text-decoration: none;
+	width:50px;
+	font-size:12px;
+}
+.paginate-default a.disabled{
+	cursor:not-allowed;
+	color:#a2a2a2;
+}
+.paginate-default a.disabled:hover{
+	background:#f3f3f3;
+	color:#a2a2a2;
+	border:1px solid #c3c1c1;
+}
+.paginate-default a:hover,.paginate-default span:hover,.paginate-default span.current{
+	border:1px solid #04bfea;
+	color:#fff;
+	background:#04bfea;
+}
